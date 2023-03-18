@@ -1,0 +1,15 @@
+{
+  "name": "libros",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "nanoid": "3.3.4",
+    "pg": "^8.10.0"
+  }
+}
