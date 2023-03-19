@@ -1,6 +1,3 @@
-import { randomBoolean } from './utils/random-boolean';
-import { generateCustomLenghtId } from './utils/generate-id';
-import { fakeData } from './utils/faker';
 import { nanoid } from 'nanoid';
 import { SeedTable } from './Table.interface';
 import {
@@ -8,10 +5,26 @@ import {
   getRandomFromList,
   randomDateBetween,
 } from './utils';
+import { fakeData } from './utils/faker';
+import { randomBoolean } from './utils/random-boolean';
 
-// you can use all of faker methods, also you can use your own methods
-// to generate data
-// there are some utils methods to help you to generate data
+// IMPORTANT: you can use the faker methods to generate data, you can see the documentation here:
+// https://www.npmjs.com/package/@faker-js/faker
+// IMPORTANT: THIS IS A SEED FILE, THIS WON'T GENERATE THE TABLES, YOU MUST CREATE THE TABLES BEFORE USING THIS FILE
+
+// you can use all of faker methods, also you can use your own methods to generate data
+// there are some utils methods to help you to generate data in the util folder, also, you can add your own methods
+// you can use the faker methods like this: fakeData.<method>(<params>), Example: fakeData.name.firstName()
+// you can use the utils methods like this: <method>(<params>), Example: generateNumericalMax(10)
+// count determine how many rows will be generated
+// columns determine the columns that will be generated
+// values determine the values that will be generated, if you are using generateFromArray, you can use # to get a value from a dependency table (#-<index of dependencies array>-<column>) and must be an object that return an array of values
+
+// relations values can be generated using the following methods:
+// you must add the dependencies in the dependencies array and add the order of the dependency in the dependentOrder property, this is important to generate the data in the correct order
+// Use # to get a value from a dependency table (#-<index of dependencies array>-<column>)
+// Use % to generate a random id (optional, you can use nanoid for generate random id with custom lenght)
+// Use $ to get a value from the current row if you are using generateFromArray, if not, it will return undefined, Example: $-<index of generate from array
 
 export const seed: SeedTable[] = [
   {
@@ -315,7 +328,6 @@ export const seed: SeedTable[] = [
       ];
     },
   },
-
   {
     table: 'alumno',
     count: 100,

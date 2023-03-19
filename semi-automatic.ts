@@ -1,8 +1,7 @@
-import { foreignKeyCheck } from './utils/disable-check';
-import { generateInsert } from './utils/generate-insert';
-import { Dialect, Options, QueryTypes, Sequelize } from 'sequelize';
-import { seed } from './seed';
 import { nanoid } from 'nanoid';
+import { Dialect, QueryTypes, Sequelize } from 'sequelize';
+import { seed } from './seed';
+import { generateInsert } from './utils/generate-insert';
 
 const DATABASE = 'bibliotecaprog3';
 const DIALECT: Dialect = 'postgres';
