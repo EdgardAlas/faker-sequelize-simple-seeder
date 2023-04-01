@@ -3,15 +3,15 @@ import { Dialect, QueryTypes, Sequelize } from 'sequelize';
 import { seed } from './seed';
 import { generateInsert } from './utils/generate-insert';
 
-const DATABASE = 'bibliotecaprog3';
-const DIALECT: Dialect = 'postgres';
+const DATABASE = 'libros';
+const DIALECT: Dialect = 'mssql';
 
 const sequelize = new Sequelize({
   dialect: DIALECT,
-  username: 'postgres',
-  password: 'root',
+  username: 'sa',
+  password: 'Root1234.$',
   host: 'localhost',
-  port: 5432,
+
   database: DATABASE,
 });
 
