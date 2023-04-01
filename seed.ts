@@ -41,9 +41,9 @@ export const seed: SeedTable[] = [
     values: () => [
       '#-0-carnet',
       '#-1-codigolibro',
-      randomDateBetween(new Date(2010, 0, 1), new Date()),
+      randomDateBetween(new Date(2010, 0, 1), new Date(2015, 0, 1)),
       randomBoolean()
-        ? randomDateBetween(new Date(2010, 0, 1), new Date())
+        ? randomDateBetween(new Date(2016, 0, 1), new Date())
         : null,
       nanoid(5),
       generateNumericalMax(10),
@@ -324,7 +324,7 @@ export const seed: SeedTable[] = [
         fakeData.name.firstName(),
         fakeData.name.lastName(),
         fakeData.address.streetAddress(),
-        randomDateBetween(new Date(1990, 0, 1), new Date()),
+        randomDateBetween(new Date(1990, 0, 1), new Date(2001, 0, 1)),
       ];
     },
   },
@@ -347,8 +347,8 @@ export const seed: SeedTable[] = [
         fakeData.name.firstName(),
         fakeData.name.lastName(),
         fakeData.address.streetAddress(),
-        randomDateBetween(new Date(1990, 0, 1), new Date()),
-        randomDateBetween(new Date(2010, 0, 1), new Date()),
+        randomDateBetween(new Date(1990, 0, 1), new Date(2002, 0, 1)),
+        randomDateBetween(new Date(2022, 0, 1), new Date()),
         getRandomFromList(['masculino', 'femenino']),
         randomBoolean(),
       ];
